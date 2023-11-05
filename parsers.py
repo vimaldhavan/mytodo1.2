@@ -7,8 +7,8 @@ def add_newtask():
     tasklist.append(newtask)
     functions.write_tasklist(tasklist)
 
-st.title('JAI SHREE RAM')
-st.subheader('My To-Do App xzfdfffy')
+st.title('My To-Do App')
+st.subheader("My Tasklist")
 
 for x, y in enumerate(tasklist):
     checkbox = st.checkbox(y, key=y)
@@ -18,8 +18,10 @@ for x, y in enumerate(tasklist):
         del st.session_state[y]
         st.rerun()
 
+st.text('Checkmark your completed tasks to remove.')
+
 st.text_input(label='', placeholder='Add a new task...',
               on_change=add_newtask, key='key1')
 
+
 print('hello')
-st.session_state
